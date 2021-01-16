@@ -1,12 +1,16 @@
-import './assets/stylesheet/style.css'
+import './assets/stylesheet/authentication.css';
+import Authentication from './components/authentication/authentication';
+
 import Footer from './components/shared/footer';
 import LandingPage from './main/landingPage';
+
 function App() {
   return (
-    <div className="App">
-      <LandingPage></LandingPage>
-      <Footer></Footer>
-    </div>
+    <>
+      {/* <LandingPage></LandingPage> */}
+      <Authentication></Authentication>
+      {/* <Footer></Footer> */}
+    </>
   );
 }
 
