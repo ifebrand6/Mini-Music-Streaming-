@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Redirect ,useHistory} from 'react-router-dom';
+
+import React from 'react'
+import { useHistory} from 'react-router-dom';
 import Form from './authenticationForm';
 const axios = require('axios');
 
 export default function Authentication() {
-    const [loginState, setloginState] = useState({
-        status: false
-    });
     let history = useHistory()
     function handleAuthenticationSubmission(event) {
         event.preventDefault();
@@ -31,15 +29,12 @@ export default function Authentication() {
         password: user.password
       })
       .then(function (response) {
-            console.log(response.token)
+            console.log(response)
             history.push("/")
-        // redirect to home page
         // pop up notification for success
-        // 
       })
       .catch(
           function(error){
-            // push the  error to the dom
             let message = error.response.data.message;
             document.getElementById('error_message').innerText = message
             
