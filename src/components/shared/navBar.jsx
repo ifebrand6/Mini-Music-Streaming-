@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return <div>
@@ -15,9 +16,9 @@ function NavBar() {
       </div>
       <div id="navbar" className="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="../navbar/">Share Your Music</a></li>
-          <li><a href="../navbar-fixed-top/">Listen To Music</a></li>
-          <li><a href="../navbar-fixed-top/">Login</a></li>
+      <li><NavLink to="/lgin">share Your Music </NavLink></li>
+      <li><NavLink to="/">Listen To Music </NavLink></li>
+      <li><NavLink to="/login">login </NavLink></li>
         </ul>
       </div>
     </div>
