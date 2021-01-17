@@ -20,7 +20,6 @@ export default function Authentication() {
     }
     function authenticate(user) {
         
-       // use aunthenication will go on here
        // set loginState.status to true
        axios.post('https://udunkulu-api.herokuapp.com/api/v1/users', {
         firstName: user.firstName,
@@ -32,6 +31,7 @@ export default function Authentication() {
             console.log(response)
             history.push("/")
         // pop up notification for success
+        
       })
       .catch(
           function(error){
