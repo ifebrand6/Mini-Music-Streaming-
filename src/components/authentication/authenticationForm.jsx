@@ -8,6 +8,7 @@ function Form(props) {
       <form className="form-signin" id="authForm" onSubmit={handleAuthenticationSubmission}>
     <img className="mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72" />
     <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <div id="error_message"></div>
     <label htmlFor="firstName" className="sr-only">First Name</label>
     <input type="text" id="firstName" className="form-control" name="firstName" placeholder="First Name" required="" autoFocus="" />
     <label htmlFor="lastName" className="sr-only">Last Name</label>

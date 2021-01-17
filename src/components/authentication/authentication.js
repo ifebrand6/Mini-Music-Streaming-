@@ -1,5 +1,5 @@
-import userEvent from '@testing-library/user-event';
 import React, { useState, useEffect } from 'react';
+import { Redirect ,useHistory} from 'react-router-dom';
 import Form from './authenticationForm';
 const axios = require('axios');
 
@@ -7,6 +7,7 @@ export default function Authentication() {
     const [loginState, setloginState] = useState({
         status: false
     });
+    let history = useHistory()
     function handleAuthenticationSubmission(event) {
         event.preventDefault();
         let formData,user;
@@ -30,17 +31,18 @@ export default function Authentication() {
         password: user.password
       })
       .then(function (response) {
-          console.log("Hello it was success")
-        console.log(response);
+            console.log(response.token)
+            history.push("/")
         // redirect to home page
         // pop up notification for success
         // 
       })
       .catch(
-          function(e){
+          function(error){
             // push the  error to the dom
-            console.log(e.response.data.message)
-            console.log('you got an error')
+            let message = error.response.data.message;
+            document.getElementById('error_message').innerText = message
+            
           }
       )
     }
