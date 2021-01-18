@@ -29,7 +29,7 @@ export default function Authentication() {
       })
       .then(function (response) {
             console.log(response)
-            history.push("/")
+            history.push("/dashboard")
         // pop up notification for success
         
       })
