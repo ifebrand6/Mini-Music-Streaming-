@@ -5,6 +5,7 @@ import Footer from "./components/shared/footer";
 import LandingPage from "./main/landingPage";
 import Dashboard from "./main/dashboard";
 import Aunthentication from "./main/aunthentication";
+import UploadMusic from "./main/uploadMusic";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route path="/dashboard">
             <Dashboard />
+          </Route>
+          <Route path="/upload-music">
+            <UploadMusic/>
           </Route>
         </Switch>
       </BrowserRouter>

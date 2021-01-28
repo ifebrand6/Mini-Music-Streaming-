@@ -1,10 +1,10 @@
 
 import React from 'react'
 import { useHistory} from 'react-router-dom';
-import Form from './authenticationForm';
+import {Form} from './authenticationForm';
 const axios = require('axios');
 
-export default function Authentication() {
+export function Authentication() {
     let history = useHistory()
     function handleAuthenticationSubmission(event) {
         event.preventDefault();
@@ -18,6 +18,7 @@ export default function Authentication() {
         };
         authenticate(user)
     }
+    
     function authenticate(user) {
         
        // set loginState.status to true
@@ -28,8 +29,9 @@ export default function Authentication() {
         password: user.password
       })
       .then(function (response) {
-            console.log(response)
-            history.push("/dashboard")
+            localStorage.setItem("good", response.data)
+            history.push("/dashboard");
+
         // pop up notification for success
         
       })
